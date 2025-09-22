@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Showcase: My Basic Info</title>
+
+    <!-- PyScript Setup -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+</head>
+<style>
+    body {
+        font-family: "Gill Sans", sans-serif;
+        background: linear-gradient(135deg, #74b9ff, #b0b0b0); 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 40px 50px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        width: 400px; 
+        text-align: center;
+    }
+
+    h2 {
+        color: #000; 
+        text-shadow: 1px 1px 2px #aaa;
+        margin-bottom: 30px;
+    }
+
+    .input-container {
+        margin-bottom: 25px;
+        text-align: left;
+    }
+
+    .input-container label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        text-shadow: 1px 1px 2px #aaa;
+    }
+
+    .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        font-family: "Gill Sans", sans-serif;
+        font-weight: bold;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: inset 1px 1px 3px rgba(0,0,0,0.05);
+    }
+
+    button {
+        padding: 12px 20px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        background: #74b9ff; 
+        color: #fff;
+        cursor: pointer;
+        text-shadow: 1px 1px 2px #555;
+        width: 100%;
+        transition: background 0.3s ease;
+    }
+
+    button:hover {
+        background: #55acee; 
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        font-weight: normal; 
+        text-shadow: none;
+        background: rgba(255, 255, 255, 0.9);
+        color: #000; 
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2>📝 String Showcase: My Basic Info</h2>
+
+        <div class="input-container">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label for="age">Age:</label>
+            <input type="text" id="age" placeholder="Enter your age">
+
+            <label for="school">School:</label>
+            <input type="text" id="school" placeholder="Enter your school">
+        </div>
+
+        <!-- Button that calls Python function -->
+        <button py-click="generate_message">Generate Message</button>
+
+        <div id="output"></div>
+    </div>
+
+    <!-- Load Python code -->
+    <py-script src="main.py"></py-script>
+</body>
+
+
+
+
